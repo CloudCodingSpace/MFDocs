@@ -91,7 +91,7 @@ body::before {
 }
 
 p {
-    padding-left: 40px;
+    padding-left: 30px;
     text-align: left;
     font-size: 1.25rem;
 }
@@ -111,6 +111,36 @@ ol {
     font-size: 1.25rem;
 }
 
+code {
+    width:fit-content;
+    border-radius: 15px;
+    padding:25px;
+    padding-left: 10px;
+    text-align: left;
+    font-size: 0.9rem;
+    background:#00000067;
+}
+
+.codeblock {
+    background-color: #2f3136;
+    color: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 0.9rem;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    margin-left: 30px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+}
+
+.codeblock code {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    font-size: 1rem;
+}
+
 h1 {
     font-size: 3rem;
     margin-bottom: 0.5rem;
@@ -119,6 +149,12 @@ h1 {
 
 h2 {
     font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.5rem;
     margin-bottom: 0.5rem;
     text-align: center;
 }
