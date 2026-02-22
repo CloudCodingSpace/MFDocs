@@ -1,4 +1,4 @@
-# About
+# **About**
 
 This website is the documentation site for MeltedForge. Since other devs, need some sort of valid
 documents which would guide them in their journey using MeltedForge instead of manually reading the entire
