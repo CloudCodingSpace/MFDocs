@@ -15,20 +15,12 @@ theme:
     - navigation.instant.preview
     - navigation.tracking
     - toc.integrate
+    - navigation.footer
 
   palette:
-    - scheme: default
-      primary: blue
-      accent: amber
-      toggle:
-        icon: material/weather-night
-        name: Switch to dark theme
     - scheme: slate
       primary: black
       accent: deep-purple
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to light theme
 
 plugins:
   - search:
@@ -49,6 +41,7 @@ markdown_extensions:
 
 nav:
   - Introduction: index.md
+  - Installation: installation.md
   - About: about.md
 
 copyright: Copyright(c) 2025-2026 CloudCodingSpace
