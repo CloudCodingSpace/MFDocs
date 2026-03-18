@@ -16,13 +16,13 @@ Some tools to be installed before running the engine :-
 
 ---
 
-# Installation the editor
+## Installing the editor
 
 (The editor docs isn't available yet since the editor is yet to do)
 
 ---
 
-# Installing the engine's core
+## Installing the engine's core
 
 > NOTE: It is preferable that the client developer must have some basic knowledge of CMake before using the engine's core directly.
 
