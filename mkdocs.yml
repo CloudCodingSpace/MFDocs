@@ -16,15 +16,20 @@ theme:
     - navigation.tracking
     - toc.integrate
     - navigation.footer
+    - search.suggest
+    - search.highlight
+    - search.share
+    - search.focus
 
   palette:
     - scheme: slate
       primary: black
-      accent: deep-purple
+      accent: deep-black
 
 plugins:
   - search:
       lang: en
+      separator: '[\s\-\.]+'
 
 markdown_extensions:
   - attr_list
@@ -38,10 +43,13 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - admonition
+  - pymdownx.details
 
 nav:
   - Introduction: index.md
   - Installation: installation.md
+  - First app: first-app.md
   - About: about.md
 
 copyright: Copyright(c) 2025-2026 CloudCodingSpace

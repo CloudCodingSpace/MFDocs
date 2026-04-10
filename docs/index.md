@@ -49,11 +49,5 @@ Features of the engine as of now :-
  - Explicit shader resource control
  - Explicit shader code control
  - Can create shader pipelines with explicit control
-
-
-Concerning limitations for now :- 
-
- - Monothreaded
- - Can't load complex scenes
- - Isn't guaranteed to be cross-os (Isn't tested on other OSes yet)
- - No editor yet for beginner game developers
+ - Can manage shader resources like samplers and uniform buffers
+ 

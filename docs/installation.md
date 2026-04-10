@@ -12,27 +12,30 @@ Some tools to be installed before running the engine :-
  - A modern C & C++ compiler. Like GCC/G++, MSVC, etc, which support C32 and C++20 (Clang not tested)
  - A GPU which supports Vulkan 1.2 and above
 
-> NOTE: Make sure that the VulkanSDK and the glslc tools can be found through CMake via `find_package` and such.
+!!! Info
+    Make sure that the VulkanSDK and the glslc tools can be found through CMake via `find_package` and such.
 
 ---
 
 ## Installing the editor
 
-(The editor docs isn't available yet since the editor is yet to do)
+!!! Info
+    (The editor docs isn't available yet since the editor is yet to do)
 
 ---
 
 ## Installing the engine's core
 
-> NOTE: It is preferable that the client developer must have some basic knowledge of CMake before using the engine's core directly.
+!!! Note
+    It is preferable that the client developer must have some basic knowledge of CMake before using the engine's core directly.
 
 Clone the [repo](https://github.com/CloudCodingSpace/MeltedForge). Commands :- 
-```bash
+```bash title="shell"
 git clone --recursive https://github.com/CloudCodingSpace/MeltedForge.git
 ```
 
 You can add it as a submodule to your github repo too. Commands :- 
-```bash 
+```bash title="shell"
 git submodule add https://github.com/CloudCodingSpace/MeltedForge.git
 git submodule update --init --recursive
 ```
