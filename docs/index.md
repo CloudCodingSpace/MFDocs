@@ -16,7 +16,7 @@ Unity and Unreal Engine, but to serve the purpose of mini-studios and small indi
 bloat free options and lightweightedness of the engine.
 
 !!! Info
-    MeltedForge was officially created on April 8, 2025.
+    MeltedForge was officially created on April 8, 2025 and is currently licensed under the ZLib license.
 
 ---
 
@@ -42,6 +42,10 @@ games and applications.
 
 Features of the engine as of now:
 
+ - Basic ECS
+    - Basic scene management
+    - Serialization/Deserialization of scene
+ - Material system (with texture caching)
  - Model loading (fbx, gltf and obj formats)
  - Editor level UI (Using cimgui)
  - Customization of the UI (Using cimgui)
@@ -50,4 +54,3 @@ Features of the engine as of now:
  - Explicit shader resource control
  - Explicit shader code control
  - Can create shader pipelines with explicit control
- - Can manage shader resources like samplers and uniform buffers

@@ -50,6 +50,7 @@ nav:
   - Introduction: index.md
   - Installation: installation.md
   - First app: first-app.md
+  - Progress: progress.md
   - About: about.md
 
 copyright: Copyright(c) 2025-2026 CloudCodingSpace
