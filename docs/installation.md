@@ -3,7 +3,7 @@
 The engine supports mainly two ways for client devs to develop games and applications using MeltedForge.
 Installation guide for each of them is given below.
 
-Some tools to be installed before running the engine :-
+Some tools to be installed before running the engine:
 
  - CMake (> v3.30, preferable to use the command line tool)
  - VulkanSDK (Make sure that the sdk is installed properly and the `VULKAN_SDK` environmental variable is defined)
@@ -29,12 +29,12 @@ Some tools to be installed before running the engine :-
 !!! Note
     It is preferable that the client developer must have some basic knowledge of CMake before using the engine's core directly.
 
-Clone the [repo](https://github.com/CloudCodingSpace/MeltedForge). Commands :- 
+Clone the [repo](https://github.com/CloudCodingSpace/MeltedForge). Commands:
 ```bash title="shell"
 git clone --recursive https://github.com/CloudCodingSpace/MeltedForge.git
 ```
 
-You can add it as a submodule to your github repo too. Commands :- 
+You can add it as a submodule to your github repo too. Commands:
 ```bash title="shell"
 git submodule add https://github.com/CloudCodingSpace/MeltedForge.git
 git submodule update --init --recursive
@@ -43,7 +43,7 @@ git submodule update --init --recursive
 Then in your client `CMakeLists.txt`, do `add_subdirectory(path/to/MeltedForge)`. Then lastly, link the core to your 
 cmake project. 
 
-Sample :- 
+Sample:
 ```cmake title="CMakeLists.txt" 
 ...
 

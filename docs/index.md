@@ -21,7 +21,7 @@ MeltedForge was officially created on April 8, 2025.
 
 ## **Goals**
 
-We want to give our client developer 2 main options :-
+We want to give our client developer 2 main options:
 
  - Either create a game using the engine's editor
  - Or, manually write your app natively in C/C++ by directly interacting with the engine's core.
@@ -39,7 +39,7 @@ test engine either. It is for now, far from the likes of an industrial standard,
 engine like Unity, Godot, Unreal Engine, Cry engine, etc. but it is in the path of becoming a engine which *can actually* export 
 games and applications.
 
-Features of the engine as of now :-
+Features of the engine as of now:
 
  - Model loading (fbx, gltf and obj formats)
  - Editor level UI (Using cimgui)
@@ -50,4 +50,3 @@ Features of the engine as of now :-
  - Explicit shader code control
  - Can create shader pipelines with explicit control
  - Can manage shader resources like samplers and uniform buffers
- 

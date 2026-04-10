@@ -6,8 +6,8 @@ theme:
   favicon: assets/icon.ico
 
   font:
-    text: Roboto
-    code: Roboto Mono
+    text: 0xProto
+    code: 0xProto Mono
 
   features:
     - navigation.instant
