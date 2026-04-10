@@ -15,7 +15,8 @@ The point of this engine isn't to compete with industrial standard, and producti
 Unity and Unreal Engine, but to serve the purpose of mini-studios and small indie devs, who prefer flexibility, 
 bloat free options and lightweightedness of the engine.
 
-MeltedForge was officially created on April 8, 2025.
+!!! Info
+    MeltedForge was officially created on April 8, 2025.
 
 ---
 
