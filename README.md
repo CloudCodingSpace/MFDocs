@@ -8,6 +8,6 @@ To be honest, designing and writing documentation is quite a weak spot for me. S
 design, style or improvements are always welcome.
 
 ## Site generators
-This website is possible by mkdocs with material theme. It is a wonderful static site generators which
-helped converting markdown files to html. Mkdocs has quite nice features like language syntax linting,
-emojs, etc.
+This website is possible by zensical. It is a wonderful static site generators which
+helped converting markdown files to html. Zensical has quite nice features like language syntax linting,
+emojs, etc. and a modern looking UI out of the box! Also, it is made by the same developers who create mkdocs.
