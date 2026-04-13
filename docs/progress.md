@@ -3,6 +3,8 @@
 This page contains what progress has been made per year to the engine.  
 These are very similar to blog posts and serve as a "record" for what the developers did every year.
 
+---
+
 ## Year #1 (April 8,2025 - April 8, 2026)
 
 This was the first year, and there weren't many cool and modern engine related features added to the engine

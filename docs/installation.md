@@ -27,7 +27,7 @@ Some tools to be installed before running the engine:
 ## Installing the engine's core
 
 !!! Note
-    It is preferable that the client developer must have some basic knowledge of CMake before using the engine's core directly.
+    It is preferable that the client developer must have some basic knowledge of CMake before using the engine's core directly. It is also assumed that git is used as the version control.
 
 Clone the [repo](https://github.com/CloudCodingSpace/MeltedForge). Commands:
 ```bash title="shell"
