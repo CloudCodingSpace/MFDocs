@@ -500,7 +500,7 @@ Installation guide for each of them is given below.</p>
 git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive
 </code></pre></div></p>
 <p>Then in your client <code>CMakeLists.txt</code>, do <code>add_subdirectory(path/to/MeltedForge)</code>. Then lastly, link the core to your 
-cmake project. </p>
+cmake project.</p>
 <p>Sample:
 <div class="language-cmake highlight"><span class="filename">CMakeLists.txt</span><pre><span></span><code><span class="err">...</span>
 
@@ -511,6 +511,14 @@ cmake project. </p>
 <span class="nb">add_executable</span><span class="p">(</span><span class="s">your_project</span><span class="w"> </span><span class="o">${</span><span class="nv">YOUR_SOURCES</span><span class="o">}</span><span class="p">)</span>
 <span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">your_project</span><span class="w"> </span><span class="s">PRIVATE</span><span class="w"> </span><span class="s">mf</span><span class="p">)</span>
 </code></pre></div></p>
+<p>Also, it is preferred that you disable the build of the <code>MFTest</code> target in CMake. If so, then add this line before adding MeltedForge as a subdirectory:</p>
+<div class="language-cmake highlight"><span class="filename">CMakeLists.txt</span><pre><span></span><code><span class="err">...</span>
+<span class="nb">set</span><span class="p">(</span><span class="s">MF_BUILD_TEST</span><span class="w"> </span><span class="s">OFF</span><span class="w"> </span><span class="s">CACHE</span><span class="w"> </span><span class="s">BOOL</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="s">FORCE</span><span class="p">)</span>
+
+<span class="nb">add_subdirectory</span><span class="p">(</span><span class="s">path/to/MeltedForge</span><span class="p">)</span>
+
+<span class="err">...</span>
+</code></pre></div>
 
 
 
