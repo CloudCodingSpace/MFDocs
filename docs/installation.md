@@ -41,7 +41,7 @@ git submodule update --init --recursive
 ```
 
 Then in your client `CMakeLists.txt`, do `add_subdirectory(path/to/MeltedForge)`. Then lastly, link the core to your 
-cmake project. 
+cmake project.
 
 Sample:
 ```cmake title="CMakeLists.txt" 
@@ -55,3 +55,13 @@ add_executable(your_project ${YOUR_SOURCES})
 target_link_libraries(your_project PRIVATE mf)
 ```
 
+Also, it is preferred that you disable the build of the `MFTest` target in CMake. If so, then add this line before adding MeltedForge as a subdirectory:
+
+```cmake title="CMakeLists.txt"
+...
+set(MF_BUILD_TEST OFF CACHE BOOL "" FORCE)
+
+add_subdirectory(path/to/MeltedForge)
+
+...
+```
