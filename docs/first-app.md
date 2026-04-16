@@ -57,7 +57,88 @@ MFAppConfig mfClientCreateAppConfig() {
 
 ```
 
-Since already mentioned, the default app it very minimal and doesn't do *anything* visually.  
+Since already mentioned, the default app is very minimal and doesn't do *anything* visually.  
 So you should see something like this: 
 
 ![image](assets/firstapp-0.png)
+
+---
+
+## The layer system
+
+MeltedForge supports a layer system in the default app so that the client can easily customize whatever they want and in a modular 
+way too.
+
+Here is a sample using the layers:
+
+```c title="main.c"
+#define MF_INCLUDE_ENTRY
+#include <mf.h>
+
+typedef struct {
+    ... // Client state stuff
+} LayerState;
+
+static void OnInit(void* layerState, void* pAppState) {
+    LayerState* state = (LayerState*)layerState;
+    MFDefaultAppState* appState = (MFDefaultAppState*)pAppState;
+    // Client's custom code
+}
+
+static void OnDeinit(void* layerState, void* pAppState) {
+    LayerState* state = (LayerState*)layerState;
+    MFDefaultAppState* appState = (MFDefaultAppState*)pAppState;
+    // Client's custom code
+}
+
+static void OnRender(void* layerState, void* pAppState) {
+    LayerState* state = (LayerState*)layerState;
+    MFDefaultAppState* appState = (MFDefaultAppState*)pAppState;
+    // Client's custom code
+}
+
+static void OnUpdate(void* layerState, void* pAppState) {
+    LayerState* state = (LayerState*)layerState;
+    MFDefaultAppState* appState = (MFDefaultAppState*)pAppState;
+    // Client's custom code
+}
+
+static void OnUIRender(void* layerState, void* pAppState) {
+    LayerState* state = (LayerState*)layerState;
+    MFDefaultAppState* appState = (MFDefaultAppState*)pAppState;
+    // Client's custom code
+}
+
+MFAppConfig mfClientCreateAppConfig() {
+    MFAppConfig config = mfCreateDefaultApp("First app using MeltedForge!!");
+    
+    MFLayer layer = {
+        .state = MF_ALLOCMEM(LayerState, sizeof(LayerState)),
+        .onInit = &OnInit,
+        .onDeinit = &OnDeinit,
+        .onRender = &OnRender,
+        .onUpdate = &OnUpdate,
+        .onUIRender = &OnUIRender
+    };
+
+    MFArray layers = mfArrayCreate(mfGetLogger(), 1, sizeof(MFLayer));
+    mfArrayAddElement(layers, MFLayer, mfGetLogger(), layer);
+
+    config.layers = layers;
+    config.winConfig.resizable = true; // Setting the window so that it can be resized. By default this is set to false.
+    config.enableDepth = true; // Enabling depth buffering (for 3D rendering). By default this is set to false.
+    config.enableUI = true; // Enabling this allows the default app to each layers's onUIRender function for custom UIs
+
+    return config;
+}
+```
+
+!!! Note
+     - The MFDefaultAppState contains these attributes:
+        - MFWindow* window
+        - MFRenderer* renderer
+     - The `MFArray` utility struct is a custom dynamic array data structure for any data type, internally expressed as `void*` and 
+    accessed based on the `elementSize` attribute provided
+     - Every layer function signature contains these two parameters `void* layerState, void* appState`, which needs to be type casted 
+     explicitly to their own original type to access their data.
+     - In case any layer function pointer is `NULL/0`, then the engine doesnt panic, it just doesn't calls it.
