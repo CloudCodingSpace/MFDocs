@@ -5,7 +5,8 @@ It is a quick guide to get a gist of how things get going, and this is not a ful
 documentation. It is meant to get things up and running as soon as possible while also explaining things and there alternatives.
 
 !!! Info
-    For this guide, it is recommended to have some basic knowledge of C and a little bit about graphics rendering since things may get a little technical.
+    - For this guide, it is recommended to have some basic knowledge of C and a little bit about graphics rendering since things may get a little technical.
+    - Also, we are not going into too much depth like explaining what is what and how and why things are the way they are.
 
 ---
 
@@ -142,3 +143,6 @@ MFAppConfig mfClientCreateAppConfig() {
      - Every layer function signature contains these two parameters `void* layerState, void* appState`, which needs to be type casted 
      explicitly to their own original type to access their data.
      - In case any layer function pointer is `NULL/0`, then the engine doesnt panic, it just doesn't calls it.
+
+!!! Tip
+    If you have interest and want to see an example which demonstrates every feature of the engine in a single `MFLayer`, then feel free to read the source code of the `MFTest` app. Link [here](https://github.com/CloudCodingSpace/MeltedForge/tree/main/MFTest)

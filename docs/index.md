@@ -1,4 +1,4 @@
-# **MeltedForge**
+# MeltedForge
 
 MeltedForge is game engine written in the C language. It was first started as a simple
 hobby engine. But slowly, the aim wasn't anymore to be a "hobby" engine. As a game engine,
@@ -20,7 +20,7 @@ bloat free options and lightweightedness of the engine.
 
 ---
 
-## **Goals**
+## Goals
 
 We want to give our client developer 2 main options:
 
@@ -32,7 +32,7 @@ and want more customization and flexibility without any useless bloat.
 
 ---
 
-## **Current position**
+## Current position
 
 At the moment of writing this documentation, MeltedForge isn't quite matured yet. It has *many* faults and doesn't 
 has basic engine features. So long story short, it is in it's young stage. Though it is also true that it is not a *toy* 
@@ -54,3 +54,16 @@ Features of the engine as of now:
  - Explicit shader resource control
  - Explicit shader code control
  - Can create shader pipelines with explicit control
+
+---
+
+## Third party dependencies
+
+The engine uses a few third party dependencies internally. They are:
+
+ - Slog (Custom logger by the same author. Repository [here](https://github.com/CloudCodingSpace/slog))
+ - Stb's single header utils (Single header utils by stb. Repository [here](https://github.com/nothings/stb))
+ - Glfw (Cross-platform windowing/util library. Repository [here](https://github.com/CloudCodingSpace/GLFW/tree/73f09546ccd681047360e4e8bc5474adad55147f))
+ - Tracy (For profiling. Repository [here](https://github.com/wolfpld/tracy/tree/05cceee0df3b8d7c6fa87e9638af311dbabc63cb))
+ - Assimp (Model loader. Repository [here](https://github.com/assimp/assimp/tree/e0b52347c6e52de2827ec957a9ebf00ce3c54f79))
+ - CImGui (C bindings for Dear ImGui, a immediate mode UI renderer. Repository [here](https://github.com/cimgui/cimgui/tree/094a55523a40fdb309f48b971a583ef02aeb56ab))
