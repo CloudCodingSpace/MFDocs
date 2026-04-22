@@ -70,69 +70,85 @@ So you should see something like this:
 MeltedForge supports a layer system in the default app so that the client can easily customize whatever they want and in a modular 
 way too.
 
-Here is a sample using the layers:
+Here is a sample for your "first app":
 
 ```c title="main.c"
 #define MF_INCLUDE_ENTRY
 #include <mf.h>
 
-typedef struct {
-    ... // Client state stuff
-} LayerState;
+struct Layer {
+    MFVec3 color;
+};
 
 static void OnInit(void* layerState, void* pAppState) {
-    LayerState* state = (LayerState*)layerState;
+    Layer* state = (Layer*)layerState;
     MFDefaultAppState* appState = (MFDefaultAppState*)pAppState;
-    // Client's custom code
+   
+    state->color = (MFVec3){0.1f, 0.0f, 0.1f};
+    mfRendererSetClearColor(appState->renderer, state->color);
+    slogLogMsg(mfGetLogger(), SLOG_SEVERITY_INFO, "%f %f %f", state->color.r, state->color.g, state->color.b);
 }
 
 static void OnDeinit(void* layerState, void* pAppState) {
-    LayerState* state = (LayerState*)layerState;
+    Layer* state = (Layer*)layerState;
     MFDefaultAppState* appState = (MFDefaultAppState*)pAppState;
     // Client's custom code
 }
 
 static void OnRender(void* layerState, void* pAppState) {
-    LayerState* state = (LayerState*)layerState;
+    Layer* state = (Layer*)layerState;
     MFDefaultAppState* appState = (MFDefaultAppState*)pAppState;
     // Client's custom code
 }
 
 static void OnUpdate(void* layerState, void* pAppState) {
-    LayerState* state = (LayerState*)layerState;
+    Layer* state = (Layer*)layerState;
     MFDefaultAppState* appState = (MFDefaultAppState*)pAppState;
     // Client's custom code
 }
 
 static void OnUIRender(void* layerState, void* pAppState) {
-    LayerState* state = (LayerState*)layerState;
+    Layer* state = (Layer*)layerState;
     MFDefaultAppState* appState = (MFDefaultAppState*)pAppState;
-    // Client's custom code
+
+    igDockSpaceOverViewport(igGetID_Str("Dockspace"), igGetMainViewport(), 0, 0);
+
+    igShowStyleEditor(igGetStyle());
+    igShowDemoWindow(mfnull);
+
+    igBegin("Hello", mfnull, ImGuiWindowFlags_None);
+    
+    igText("Delta Time: %0.3f ms", mfRendererGetDeltaTime(appState->renderer));
+    igText("FPS: %0.2f", 1000.0/mfRendererGetDeltaTime(appState->renderer));
+
+    igEnd();
 }
 
 MFAppConfig mfClientCreateAppConfig() {
     MFAppConfig config = mfCreateDefaultApp("First app using MeltedForge!!");
-    
-    MFLayer layer = {
-        .state = MF_ALLOCMEM(LayerState, sizeof(LayerState)),
-        .onInit = &OnInit,
-        .onDeinit = &OnDeinit,
-        .onRender = &OnRender,
-        .onUpdate = &OnUpdate,
-        .onUIRender = &OnUIRender
-    };
+    config.winConfig.resizable = true;
+    config.enableDepth = true;
+    config.enableUI = true;
+
+    MFLayer layer{};
+    layer.onInit = &OnInit;
+    layer.onDeinit = &OnDeinit;
+    layer.onRender = &OnRender;
+    layer.onUIRender = &OnUIRender;
+    layer.onUpdate = &OnUpdate;
+    layer.state = MF_ALLOCMEM(Layer, sizeof(Layer));
 
     MFArray layers = mfArrayCreate(mfGetLogger(), 1, sizeof(MFLayer));
     mfArrayAddElement(layers, MFLayer, mfGetLogger(), layer);
-
     config.layers = layers;
-    config.winConfig.resizable = true; // Setting the window so that it can be resized. By default this is set to false.
-    config.enableDepth = true; // Enabling depth buffering (for 3D rendering). By default this is set to false.
-    config.enableUI = true; // Enabling this allows the default app to each layers's onUIRender function for custom UIs
 
     return config;
 }
 ```
+
+Based on this first app's sameple, you should see something like this: 
+
+![image](assets/firstapp-1.png)
 
 !!! Note
      - The MFDefaultAppState contains these attributes:
