@@ -48,12 +48,15 @@ Features of the engine as of now:
  - Material system (with texture caching)
  - Model loading (fbx, gltf and obj formats)
  - Editor level UI (Using cimgui)
- - Customization of the UI (Using cimgui)
+     - Customization of the UI (By cimgui)
  - Custom offscreen render targets
- - Binary serializating & deserializing api
+ - Binary serializing & deserializing api
  - Explicit shader resource control
  - Explicit shader code control
  - Can create shader pipelines with explicit control
+ - Skybox creation
+    - Skybox generation from equirectangular image (.hdr format supported too!)
+    - Irradiance map generation support (Diffuse IBL)
 
 ---
 
