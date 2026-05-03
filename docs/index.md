@@ -57,6 +57,9 @@ Features of the engine as of now:
  - Skybox creation
     - Skybox generation from equirectangular image (.hdr format supported too!)
     - Irradiance map generation support (Diffuse IBL)
+ - Custom useful data structures
+    - MFArray (A dynamic array which uses the heap)
+    - MFHashMap (A unordered dynamic hashmap which uses the heap)
 
 ---
 
