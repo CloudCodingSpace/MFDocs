@@ -138,8 +138,8 @@ MFAppConfig mfClientCreateAppConfig() {
     layer.onUpdate = &OnUpdate;
     layer.state = MF_ALLOCMEM(Layer, sizeof(Layer));
 
-    MFArray layers = mfArrayCreate(mfGetLogger(), 1, sizeof(MFLayer));
-    mfArrayAddElement(layers, MFLayer, mfGetLogger(), layer);
+    MFArray layers = mfArrayCreate(1, sizeof(MFLayer));
+    mfArrayAddElement(layers, MFLayer, layer);
     config.layers = layers;
 
     return config;
