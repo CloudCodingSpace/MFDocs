@@ -47,7 +47,7 @@ Features of the engine as of now:
     - Serialization/Deserialization of scene
     - Management of multiple entities
  - Material system (with texture caching)
- - Model loading (fbx, gltf and obj formats)
+ - Model loading (Only gltf 2.0 format)
  - Editor level UI (Using cimgui)
      - Customization of the UI (By cimgui)
  - Custom offscreen render targets
@@ -61,6 +61,8 @@ Features of the engine as of now:
  - Custom useful data structures
     - MFArray (A dynamic array which uses the heap)
     - MFHashMap (A unordered dynamic hashmap which uses the heap)
+ - Basic PBR support
+    - IBL (Only diffuse currently)
 
 ---
 
