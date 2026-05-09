@@ -146,7 +146,7 @@ MFAppConfig mfClientCreateAppConfig() {
 }
 ```
 
-Based on this first app's sameple, you should see something like this: 
+Based on this first app's sample, you should see something like this: 
 
 ![image](assets/firstapp-1.png)
 

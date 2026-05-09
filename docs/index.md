@@ -45,6 +45,7 @@ Features of the engine as of now:
  - Basic ECS
     - Basic scene management
     - Serialization/Deserialization of scene
+    - Management of multiple entities
  - Material system (with texture caching)
  - Model loading (fbx, gltf and obj formats)
  - Editor level UI (Using cimgui)
