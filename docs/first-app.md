@@ -127,8 +127,8 @@ static void OnUIRender(void* layerState, void* pAppState) {
 MFAppConfig mfClientCreateAppConfig() {
     MFAppConfig config = mfCreateDefaultApp("First app using MeltedForge!!");
     config.winConfig.resizable = true;
-    config.enableDepth = true;
-    config.enableUI = true;
+    config.rendererConfig.enableDepth = true;
+    config.rendererConfig.enableUI = true;
 
     MFLayer layer{};
     layer.onInit = &OnInit;
